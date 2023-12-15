@@ -33,4 +33,4 @@ jobs:
         echo "## Bar Plots" >> report.md 
         echo '![](./Figure_1.png "Bar plot")' >> report.md
         
-        cm1 comment create report.md
+        cml comment create report.md
