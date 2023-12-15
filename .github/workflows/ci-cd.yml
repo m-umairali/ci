@@ -29,8 +29,8 @@ jobs:
       run: |
 
 
-        echo "# First Line of our report" >> report.md
+        echo 'My first CML report' > report.md
         echo "## Bar Plots" >> report.md 
-        echo '![](./Figure_1.png "Bar plot")' >> report.md
+        echo '![](./plot.png)' >> report.md
         
-        cml comment create report.md
+        cml comment create --publish report.md
