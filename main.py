@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 # List of fruits
-fruits = ['Applee', 'Guavaa', 'Orange', 'Grapes', 'Watermelon']
+fruits = ['Apple', 'Guava', 'Orange', 'Grapes', 'Watermelon']
 
 # Corresponding quantities or counts
 quantities = [25, 18, 30, 15, 10]
