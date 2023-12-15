@@ -1,0 +1,36 @@
+name : CI Pipeline
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+    - uses: iterative/setup-cml@v2
+
+    - name: install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run main file
+      run: |
+        python main.py
+
+    - name: Create CML report
+      env:
+        REPO_TOKEN: ${{Secerte Github TOken}}
+      run: |
+
+
+        echo "# First Line of our report" >> report.md
+        echo "## Bar Plots" >> report.md 
+        echo '![](./Fighure_1.png "Bar plot")' >> report.md
+        
+        cm1 comment create report.md
