@@ -25,12 +25,12 @@ jobs:
 
     - name: Create CML report
       env:
-        REPO_TOKEN: ${{Secerte Github TOken}}
+        REPO_TOKEN: ${{secrets.GITHUB_TOKEN}}
       run: |
 
 
         echo "# First Line of our report" >> report.md
         echo "## Bar Plots" >> report.md 
-        echo '![](./Fighure_1.png "Bar plot")' >> report.md
+        echo '![](./Figure_1.png "Bar plot")' >> report.md
         
         cm1 comment create report.md
