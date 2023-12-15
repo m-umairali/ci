@@ -6,7 +6,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: DEV
 
     steps:
     - uses: actions/checkout@v3
@@ -25,9 +24,11 @@ jobs:
         python main.py
 
     - name: Create CML report
-      
+      env:
+        REPO_TOKEN: ${{ secrets.SECRET_TOKEN }}
       run: |
-      
+
+
         echo 'My first CML report' > report.md
         echo "## Bar Plots" >> report.md 
         echo '![](./plot.png)' >> report.md
